@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedPro.CORE.Models
+namespace MedPro.CORE.IRepositories
 {
-    internal class Appointment
+    internal class IUserRepository
     {
     }
 }

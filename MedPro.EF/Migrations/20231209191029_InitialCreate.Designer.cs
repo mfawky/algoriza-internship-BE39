@@ -4,6 +4,7 @@ using MedPro.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MedPro.EF.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231209191029_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -126,9 +129,6 @@ namespace MedPro.EF.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("BookingStatus")
-                        .HasColumnType("int");
-
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
@@ -136,6 +136,9 @@ namespace MedPro.EF.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RequestState")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -226,7 +229,7 @@ namespace MedPro.EF.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
-                    b.Property<string>("DoctorSpecialization")
+                    b.Property<string>("SpecName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -399,7 +402,7 @@ namespace MedPro.EF.Migrations
             modelBuilder.Entity("MedPro.CORE.Models.Patient", b =>
                 {
                     b.HasOne("MedPro.CORE.Models.ApplicationUser", "User")
-                        .WithMany("Patients")
+                        .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
@@ -481,8 +484,6 @@ namespace MedPro.EF.Migrations
             modelBuilder.Entity("MedPro.CORE.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Doctors");
-
-                    b.Navigation("Patients");
                 });
 
             modelBuilder.Entity("MedPro.CORE.Models.Booking", b =>

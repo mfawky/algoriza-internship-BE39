@@ -1,15 +1,9 @@
 ﻿using MedPro.CORE.Constants;
-using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MedPro.CORE.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class RegisterDTO
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -21,8 +15,5 @@ namespace MedPro.CORE.Models
         public AccountType AccountType { get; set; }
         public BloodType BloodType { get; set; }
         public Gender Gender { get; set; }
-        public List<Doctor> Doctors { get; set; } = new List<Doctor>();
-        public List<Patient> Patients { get; set; } = new List<Patient>();
-
     }
 }
