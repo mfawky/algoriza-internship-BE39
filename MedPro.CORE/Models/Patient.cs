@@ -12,6 +12,7 @@ namespace MedPro.CORE.Models
         public string Email { get; set; }
         public int PatientId { get; set; }
         public List<Booking> Bookings { get; set; }
+        public Voucher Voucher { get; set; }
         public ApplicationUser User { get; set; }
     }
 }

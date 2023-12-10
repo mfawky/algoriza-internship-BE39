@@ -27,5 +27,6 @@ namespace MedPro.EF
         public DbSet<Specialization> Specalizations { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<Voucher> Vouchers { get; set; }
     }
 }
