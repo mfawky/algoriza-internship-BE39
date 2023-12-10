@@ -29,7 +29,6 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 
 }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

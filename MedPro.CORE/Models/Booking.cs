@@ -16,7 +16,7 @@ namespace MedPro.CORE.Models
         public int PatientId { get; set; }
         public int Price { get; set; }
         public string BookingDay { get; set; }
-        public List<Doctor> Doctors { get; set; }
+        public Doctor Doctor { get; set; }
         public Patient Patient { get; set; }
         public List<Schedule> Schedules { get; set; }
     }

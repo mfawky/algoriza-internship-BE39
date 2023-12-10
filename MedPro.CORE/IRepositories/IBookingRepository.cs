@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MedPro.CORE.IRepositories
 {
-    public interface IUserRepository
+    public interface IBookingRepository
     {
-        Task DeleteUserAsync(string userId);
-
+        void AddBooking(int Bookingid, Booking bookings);
+        void DeleteBooking(int Bookingid);
     }
 }

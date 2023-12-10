@@ -50,8 +50,7 @@ namespace MedPro.Services
             return new AuthDTO
             {
                 IsAuthenticated = true,
-                UserId = user.Id,
-                Message = "User is authenticated now"
+                UserId = user.Id
             };
 
         }

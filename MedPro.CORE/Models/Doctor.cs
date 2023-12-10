@@ -13,5 +13,7 @@ namespace MedPro.CORE.Models
         public int SpecID { get; set; }
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
+        public Specialization specialization { get; set; }
+        public List<Booking> Bookings { get; set; }
     }
 }
